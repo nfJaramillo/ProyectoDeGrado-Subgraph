@@ -41,68 +41,6 @@ export class Deposits extends Entity {
   set id(value: string) {
     this.set("id", Value.fromString(value));
   }
-
-  get from(): Bytes {
-    let value = this.get("from");
-    return value!.toBytes();
-  }
-
-  set from(value: Bytes) {
-    this.set("from", Value.fromBytes(value));
-  }
-
-  get to(): Bytes | null {
-    let value = this.get("to");
-    if (!value || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toBytes();
-    }
-  }
-
-  set to(value: Bytes | null) {
-    if (!value) {
-      this.unset("to");
-    } else {
-      this.set("to", Value.fromBytes(<Bytes>value));
-    }
-  }
-
-  get value(): BigInt {
-    let value = this.get("value");
-    return value!.toBigInt();
-  }
-
-  set value(value: BigInt) {
-    this.set("value", Value.fromBigInt(value));
-  }
-
-  get gasLimit(): BigInt {
-    let value = this.get("gasLimit");
-    return value!.toBigInt();
-  }
-
-  set gasLimit(value: BigInt) {
-    this.set("gasLimit", Value.fromBigInt(value));
-  }
-
-  get gasPrice(): BigInt {
-    let value = this.get("gasPrice");
-    return value!.toBigInt();
-  }
-
-  set gasPrice(value: BigInt) {
-    this.set("gasPrice", Value.fromBigInt(value));
-  }
-
-  get timestamp(): BigInt {
-    let value = this.get("timestamp");
-    return value!.toBigInt();
-  }
-
-  set timestamp(value: BigInt) {
-    this.set("timestamp", Value.fromBigInt(value));
-  }
 }
 
 export class Withdrawals extends Entity {

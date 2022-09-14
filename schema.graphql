@@ -1,11 +1,11 @@
 type Deposits @entity {
   id: ID!
-  from: Bytes!
-  to: Bytes
-  value: BigInt!,
-  gasLimit: BigInt!,
-  gasPrice: BigInt!,
-  timestamp: BigInt!
+#  from: Bytes!
+#  to: Bytes
+#  value: BigInt!
+#  gasLimit: BigInt!
+#  gasPrice: BigInt
+#  timestamp: BigInt!
 }
 
 type Withdrawals @entity {
