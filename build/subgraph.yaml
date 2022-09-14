@@ -1,6 +1,6 @@
 specVersion: 0.0.4
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: TornadoCash1
@@ -18,10 +18,10 @@ dataSources:
         - Withdrawal
       abis:
         - name: TornadoCash1
-          file: ./abis/TornadoCash1.json
+          file: TornadoCash1\abis\TornadoCash1.json
       eventHandlers:
         - event: Deposit(indexed bytes32,uint32,uint256)
           handler: handleDeposit
         - event: Withdrawal(address,bytes32,indexed address,uint256)
           handler: handleWithdrawal
-      file: ./src/tornado-cash-1.ts
+      file: TornadoCash1\TornadoCash1.wasm
