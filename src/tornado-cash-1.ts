@@ -1,96 +1,59 @@
 import { BigInt } from "@graphprotocol/graph-ts"
 import {
   TornadoCash1,
-  Deposit,
-  Withdrawal
+  Deposit as deposit_event,
+  Withdrawal as Withdrawal_event
 } from "../generated/TornadoCash1/TornadoCash1"
-import { Deposits, Withdrawals } from "../generated/schema"
+import { Deposit, Withdrawal } from "../generated/schema"
 
-export function handleDeposit(event: Deposit): void {
+export function handleDeposit(event: deposit_event): void {
   // Entities can be loaded from the store using a string ID; this ID
   // needs to be unique across all entities of the same type
-  let entity = Deposits.load(event.transaction.hash.toHex())
+  let entity = Deposit.load(event.transaction.hash.toHex())
 
   // Entities only exist after they have been saved to the store;
   // `null` checks allow to create entities on demand
   if (!entity) {
-    entity = new Deposits(event.transaction.hash.toHex())
+    entity = new Deposit(event.transaction.hash.toHex())
 
   }
 
 
   // Entity fields can be set based on event parameters
-  /** 
+   
   entity.from = event.transaction.from
   entity.to = event.transaction.to
   entity.value = event.transaction.value
   entity.gasLimit = event.transaction.gasLimit
   entity.gasPrice = event.transaction.gasPrice
   entity.timestamp = event.block.timestamp
-  */
+  
 
   // Entities can be written to the store with `.save()`
   entity.save()
 
-  // Note: If a handler doesn't require existing field values, it is faster
-  // _not_ to load the entity from the store. Instead, create it fresh with
-  // `new Entity(...)`, set the fields that should be updated and save the
-  // entity back to the store. Fields that were not set or unset remain
-  // unchanged, allowing for partial updates to be applied.
 
-  // It is also possible to access smart contracts from mappings. For
-  // example, the contract that has emitted the event can be connected to
-  // with:
-  //
-  // let contract = Contract.bind(event.address)
-  //
-  // The following functions can then be called on this contract to access
-  // state variables and other data:
-  //
-  // - contract.nullifierHashes(...)
-  // - contract.verifier(...)
-  // - contract.hashLeftRight(...)
-  // - contract.FIELD_SIZE(...)
-  // - contract.levels(...)
-  // - contract.operator(...)
-  // - contract.isKnownRoot(...)
-  // - contract.commitments(...)
-  // - contract.denomination(...)
-  // - contract.currentRootIndex(...)
-  // - contract.isSpentArray(...)
-  // - contract.getLastRoot(...)
-  // - contract.roots(...)
-  // - contract.ROOT_HISTORY_SIZE(...)
-  // - contract.isSpent(...)
-  // - contract.zeros(...)
-  // - contract.ZERO_VALUE(...)
-  // - contract.filledSubtrees(...)
-  // - contract.nextIndex(...)
 }
 
-export function handleWithdrawal(event: Withdrawal): void {
+export function handleWithdrawal(event: Withdrawal_event): void {
   // Entities can be loaded from the store using a string ID; this ID
   // needs to be unique across all entities of the same type
-  let entity = Withdrawals.load(event.transaction.from.toHex())
+  let entity = Withdrawal.load(event.transaction.from.toHex())
 
   // Entities only exist after they have been saved to the store;
   // `null` checks allow to create entities on demand
   if (!entity) {
-    entity = new Withdrawals(event.transaction.from.toHex())
+    entity = new Withdrawal(event.transaction.from.toHex())
 
-    // Entity fields can be set using simple assignments
-    entity.count = BigInt.fromI32(0)
   }
 
-  // BigInt and BigDecimal math are supported
-  entity.count = entity.count.plus(BigInt.fromI32(1))
 
-  // Entity fields can be set based on event parameters
-  entity.nullifierHash = event.params.nullifierHash
-  entity.relayer = event.params.relayer
-  entity.fee = event.params.fee
+  entity.from = event.transaction.from
+  entity.to = event.transaction.to
+  entity.value = event.transaction.value
+  entity.gasLimit = event.transaction.gasLimit
+  entity.gasPrice = event.transaction.gasPrice
   entity.timestamp = event.block.timestamp
-
   // Entities can be written to the store with `.save()`
   entity.save()
 

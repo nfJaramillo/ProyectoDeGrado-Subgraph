@@ -1,19 +1,20 @@
-type Deposits @entity {
+type Deposit @entity {
   id: ID!
-#  from: Bytes!
-#  to: Bytes
-#  value: BigInt!
-#  gasLimit: BigInt!
-#  gasPrice: BigInt
-#  timestamp: BigInt!
+  from: Bytes!
+  to: Bytes
+  value: BigInt!
+  gasLimit: BigInt!
+  gasPrice: BigInt
+  timestamp: BigInt!
 }
 
-type Withdrawals @entity {
+type Withdrawal @entity {
   id: ID!
-  count: BigInt!
-  nullifierHash: Bytes! # bytes32
-  relayer: Bytes!
-  fee: BigInt! # uint32
+  from: Bytes!
+  to: Bytes
+  value: BigInt!
+  gasLimit: BigInt!
+  gasPrice: BigInt
   timestamp: BigInt!
 }
 
