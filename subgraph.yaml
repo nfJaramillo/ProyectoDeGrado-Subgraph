@@ -14,8 +14,8 @@ dataSources:
       apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
-        - Deposits
-        - Withdrawals
+        - Deposit
+        - Withdrawal
       abis:
         - name: TornadoCash1
           file: ./abis/TornadoCash1.json
@@ -25,3 +25,26 @@ dataSources:
         - event: Withdrawal(address,bytes32,indexed address,uint256)
           handler: handleWithdrawal
       file: ./src/tornado-cash-1.ts
+  - kind: ethereum
+    name: Contract
+    network: mainnet
+    source:
+      address: "0x910Cbd523D972eb0a6f4cAe4618aD62622b39DbF"
+      abi: Contract
+      startBlock: 9117720
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Deposit
+        - Withdrawal
+      abis:
+        - name: Contract
+          file: ./abis/TornadoCash2.json
+      eventHandlers:
+        - event: Deposit(indexed bytes32,uint32,uint256)
+          handler: handleDeposit
+        - event: Withdrawal(address,bytes32,indexed address,uint256)
+          handler: handleWithdrawal
+      file: ./src/tornado-cash-2.ts

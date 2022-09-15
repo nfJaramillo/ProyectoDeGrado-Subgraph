@@ -2,6 +2,9 @@
   "mainnet": {
     "TornadoCash1": {
       "address": "0xA160cdAB225685dA1d56aa342Ad8841c3b53f291"
+    },
+    "Contract": {
+      "address": "0x910Cbd523D972eb0a6f4cAe4618aD62622b39DbF"
     }
   }
 }
