@@ -16,4 +16,5 @@ type Withdrawal @entity {
   gasLimit: BigInt!
   gasPrice: BigInt
   timestamp: BigInt!
+  input: Bytes
 }
