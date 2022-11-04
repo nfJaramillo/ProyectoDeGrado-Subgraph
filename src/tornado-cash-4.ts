@@ -25,7 +25,7 @@ import { Deposit, Withdrawal } from "../generated/schema"
     entity.gasLimit = event.transaction.gasLimit
     entity.gasPrice = event.transaction.gasPrice
     entity.timestamp = event.block.timestamp
-    
+    entity.input = event.transaction.input
   
     // Entities can be written to the store with `.save()`
     entity.save()

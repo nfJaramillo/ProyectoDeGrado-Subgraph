@@ -6,6 +6,7 @@ type Deposit @entity {
   gasLimit: BigInt!
   gasPrice: BigInt
   timestamp: BigInt!
+  input: Bytes
 }
 
 type Withdrawal @entity {
