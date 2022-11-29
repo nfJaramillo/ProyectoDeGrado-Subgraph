@@ -12,4 +12,4 @@ Este repositorio contiene el código utilizado para crear un subgrafo en TheGrap
 
 
 
-El subgrafo fue realizado como proyecto de grado de Ingeniería de Sistemas y Computación en la Universidad de los Andes por Nicolás Jaramillo y con Darío Ernesto Correal como asesor durante el periodo 2022-20.
+El subgrafo fue realizado como parte del proyecto de grado de Ingeniería de Sistemas y Computación en la Universidad de los Andes realizado por Nicolás Jaramillo y con Darío Ernesto Correal como asesor durante el periodo 2022-20.
