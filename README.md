@@ -1,6 +1,6 @@
 # ProyectoDeGrado-Subgraph
 
-Este repositorio contiene el código utilizado para crear un subgrafo en TheGraph que permite extraer el id, la dirección de remitente y destinatario, el valor, el limite de gas, el precio del gas, el timestamp y el input data de las transacciones relacionadas con los eventos de deposito y retiro entre diciembre de 2019 y octubre de 2022 de los siguientes Smart Contracts relacionados con Ehtereum-Tornado-Cash:
+Este repositorio contiene el código utilizado para crear un subgrafo en TheGraph (https://testnet.thegraph.com/explorer/subgraphs/7PonLjDmPw1tRU8rDxARsk5ziWjmtcPqQFVWzXSdP1mT?view=Overview) que permite extraer el id, la dirección de remitente y destinatario, el valor, el limite de gas, el precio del gas, el timestamp y el input data de las transacciones relacionadas con los eventos de deposito y retiro entre diciembre de 2019 y octubre de 2022 de los siguientes Smart Contracts relacionados con Ehtereum-Tornado-Cash:
 
 0xA160cdAB225685dA1d56aa342Ad8841c3b53f291
 
