@@ -10,6 +10,6 @@ Este repositorio contiene el código utilizado para crear un subgrafo en TheGrap
 
 0x12D66f87A04A9E220743712cE6d9bB1B5616B8Fc
 
-
+Posteriormente los datos se extraen, transforman y analizan, esto se puede evidenciar en el repositorio: https://github.com/nfJaramillo/ProyectoDeGrado-Datos
 
 El subgrafo fue realizado como parte del proyecto de grado de Ingeniería de Sistemas y Computación en la Universidad de los Andes realizado por Nicolás Jaramillo y con Darío Ernesto Correal como asesor durante el periodo 2022-20.
